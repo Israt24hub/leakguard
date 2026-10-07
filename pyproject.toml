@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "leakguard"
+version = "0.1.0"
+description = "Find data leakage in tabular datasets before it fools your model."
+readme = "README.md"
+license = "MIT"
+authors = [{ name = "Israt Zaman Srity" }]
+requires-python = ">=3.10"
+dependencies = ["numpy>=1.24", "pandas>=2.0", "scikit-learn>=1.3"]
+keywords = ["machine-learning", "data-leakage", "data-quality", "model-evaluation"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=7"]
+
+[project.scripts]
+leakguard = "leakguard.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/Israt24hub/leakguard"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
